@@ -1,0 +1,32 @@
+.jumbotron {
+  height: 500px;
+  background: $meteor-black
+}
+
+.look-btn-big {
+  margin-top: 200px;
+  width: 260px;
+  background: $red;
+  color: $white;
+  text-transform: uppercase;
+  border: none;
+  padding: 20px 0;
+  letter-spacing: 2px;
+  &:hover {
+    background: $darker-red;
+  }
+}
+
+.add-btn-big {
+  margin-top: 200px;
+  width: 260px;
+  background: transparent;
+  color: $white;
+  text-transform: uppercase;
+  border: 1px solid $darker-red;
+  padding: 20px 0;
+  letter-spacing: 2px;
+  &:hover {
+    background: $darker-red;
+  }
+}

@@ -7,3 +7,7 @@
 meteor-platform
 autopublish
 insecure
+twbs:bootstrap
+fourseven:scss
+accounts-ui
+accounts-password
