@@ -12,6 +12,7 @@
   border: none;
   padding: 20px 0;
   letter-spacing: 2px;
+  transition: 0.2s;
   &:hover {
     background: $darker-red;
   }
@@ -26,6 +27,7 @@
   border: 1px solid $darker-red;
   padding: 20px 0;
   letter-spacing: 2px;
+  transition: 0.2s;
   &:hover {
     background: $darker-red;
   }
