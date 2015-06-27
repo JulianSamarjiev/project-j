@@ -2,7 +2,7 @@
   background: $white;
   border: none;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .navbar-brand {
@@ -23,4 +23,5 @@
 
 #login-dropdown-list {
   left: -40px;
+  font-size: 12px;
 }

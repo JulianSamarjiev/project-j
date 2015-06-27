@@ -1,6 +1,8 @@
 .jumbotron {
-  height: 100vh;
-  background: $meteor-black
+  height: 95vh;
+  background: $meteor-black;
+  text-align: center;
+  margin: 0;
 }
 
 .look-btn-big {
@@ -11,7 +13,8 @@
   text-transform: uppercase;
   border: none;
   padding: 20px 0;
-  letter-spacing: 2px;
+  margin-right: 50px;
+  letter-spacing: 1px;
   transition: 0.2s;
   &:hover {
     background: $darker-red;
@@ -26,7 +29,8 @@
   text-transform: uppercase;
   border: 1px solid $darker-red;
   padding: 20px 0;
-  letter-spacing: 2px;
+  margin-left: 50px;
+  letter-spacing: 1px;
   transition: 0.2s;
   &:hover {
     background: $darker-red;
