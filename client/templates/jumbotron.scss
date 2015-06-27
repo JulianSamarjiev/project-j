@@ -11,13 +11,14 @@
   background: $red;
   color: $white;
   text-transform: uppercase;
-  border: none;
+  border: 1px solid $red;
   padding: 20px 0;
   margin-right: 50px;
   letter-spacing: 1px;
-  transition: 0.2s;
+  transition: all 0.2s linear;
   &:hover {
     background: $darker-red;
+    border: 1px solid $darker-red;
   }
 }
 
@@ -31,7 +32,7 @@
   padding: 20px 0;
   margin-left: 50px;
   letter-spacing: 1px;
-  transition: 0.2s;
+  transition: all 0.2s linear;
   &:hover {
     background: $darker-red;
   }
