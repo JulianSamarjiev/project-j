@@ -5,35 +5,37 @@
   margin: 0;
 }
 
-.look-btn-big {
+.btn-around {
   margin-top: 300px;
   width: 260px;
   background: $red;
   color: $white;
   text-transform: uppercase;
-  border: 1px solid $red;
+  border-radius: 0;
   padding: 20px 0;
   margin-right: 50px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   transition: all 0.2s linear;
   &:hover {
     background: $darker-red;
-    border: 1px solid $darker-red;
+    color: $white;
   }
 }
 
-.add-btn-big {
+.btn-add {
   margin-top: 300px;
   width: 260px;
   background: transparent;
   color: $white;
   text-transform: uppercase;
+  border-radius: 0;
   border: 1px solid $darker-red;
   padding: 20px 0;
   margin-left: 50px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   transition: all 0.2s linear;
   &:hover {
     background: $darker-red;
+    color: $white;
   }
 }
