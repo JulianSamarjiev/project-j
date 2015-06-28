@@ -1,7 +1,21 @@
 
 // Loading map on startup
 Meteor.startup(function() {
-  GoogleMaps.load({ libraries: 'places' });
+  GoogleMaps.load({ key: 'AIzaSyC_mE9TthiEAEkkgROtoj9xUSglMq1vChE', libraries: 'places' });
+
+  var autoComplete = new google.maps.places.Autocomplete(
+  document.getElementById(search), {
+    types: ['(cities)']
+  });
+
+  google.maps.event.addListener(autoComplete, 'place_changed', function() {
+    var place = autocomplete.getPlace();
+    if (place.geometry) {
+       map.panTo(place.geometry.location);
+       map.setZoom(15);
+    }
+  });
+
 });
 
 Template.map.helpers({
