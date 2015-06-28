@@ -1,9 +1,12 @@
 <template name="submit">
   <div class="submit">
     <div class="container">
-      <div class="login">
-        This is the login or submit page
-      </div>
+      {{#if currentUser}}
+        {{> dashboard}}
+      {{else}}
+        {{> register}}
+        {{> login}}
+      {{/if}}
     </div>
   </div>
 </template>
