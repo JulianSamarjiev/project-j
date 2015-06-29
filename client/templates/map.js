@@ -1,21 +1,9 @@
-
 // Loading map on startup
 Meteor.startup(function() {
-  GoogleMaps.load({ key: 'AIzaSyC_mE9TthiEAEkkgROtoj9xUSglMq1vChE', libraries: 'places' });
-
-  var autoComplete = new google.maps.places.Autocomplete(
-  document.getElementById(search), {
-    types: ['(cities)']
+  GoogleMaps.load({
+    key: 'AIzaSyC_mE9TthiEAEkkgROtoj9xUSglMq1vChE',
+    libraries: 'places'
   });
-
-  google.maps.event.addListener(autoComplete, 'place_changed', function() {
-    var place = autocomplete.getPlace();
-    if (place.geometry) {
-       map.panTo(place.geometry.location);
-       map.setZoom(15);
-    }
-  });
-
 });
 
 Template.map.helpers({
@@ -30,6 +18,23 @@ Template.map.helpers({
     }
   }
 });
+
+Template.map.rendered = function() {
+  window.onload = function() {
+
+    input = document.getElementById('search');
+    autocomplete = new google.maps.places.Autocomplete(input);
+
+    // When the user selects an address from the dropdown,
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+
+      // Get the place details from the autocomplete object.
+      var place = autocomplete.getPlace();
+
+      console.log("place: " + JSON.stringify(place));
+    });
+  };
+};
 
 Template.map.onCreated(function() {
   // We can use the `ready` callback to interact with the map API once the map is ready.
