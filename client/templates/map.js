@@ -1,48 +1,26 @@
-// Loading map on startup
 Meteor.startup(function() {
-  GoogleMaps.load({
-    key: 'AIzaSyC_mE9TthiEAEkkgROtoj9xUSglMq1vChE',
-    libraries: 'places'
-  });
+  GoogleMaps.load();
 });
 
 Template.map.helpers({
-  locationsOptions: function() {
-    // Make sure the maps API has loaded
+  mapOptions: function() {
     if (GoogleMaps.loaded()) {
-      // Map initialization options
       return {
-        center: new google.maps.LatLng(52.524268, 13.406290),
-        zoom: 12
+        center: new google.maps.LatLng(-37.8136, 144.9631),
+        zoom: 8
       };
     }
   }
 });
 
-Template.map.rendered = function() {
-  window.onload = function() {
-
-    input = document.getElementById('search');
-    autocomplete = new google.maps.places.Autocomplete(input);
-
-    // When the user selects an address from the dropdown,
-    google.maps.event.addListener(autocomplete, 'place_changed', function() {
-
-      // Get the place details from the autocomplete object.
-      var place = autocomplete.getPlace();
-
-      console.log("place: " + JSON.stringify(place));
-    });
-  };
-};
-
 Template.map.onCreated(function() {
-  // We can use the `ready` callback to interact with the map API once the map is ready.
-  GoogleMaps.ready('locations', function(map) {
-    // Add a marker to the map once it's ready
-    var marker = new google.maps.Marker({
-      position: map.options.center,
-      map: map.instance
-    });
-  });
-});
+  GoogleMaps.ready('map', function(map) {
+
+    if(navigator.geolocation) {
+      // Support
+    } else {
+      // No support
+    }
+
+  })
+})

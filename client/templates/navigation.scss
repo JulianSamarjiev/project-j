@@ -2,7 +2,7 @@
   background: $white;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-bottom: 1px solid $meteor-black;
+  border-bottom: 1px solid lighten($meteor-black, 50%);
 }
 
 .navbar-brand {
