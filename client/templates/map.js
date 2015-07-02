@@ -16,14 +16,24 @@ Template.map.helpers({
 Template.map.onCreated(function() {
   GoogleMaps.ready('map', function(map) {
 
+    var initialLocation;
+    var browserSupportFlag = new Boolean();
+    var map;
+
+    // Try W3C Geolocation (Preffered)
     if (navigator.geolocation) {
-      // Support
+      browserSupportFlag = true;
       navigator.geolocation.getCurrentPosition(function(position) {
-        var current = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        map.setCenter(initialLocation);
+      }, function() {
+        handleNoGeolocation(browserSupportFlag);
       });
-    } else {
-      // No support
-      console.log("Something is wrong!")
+    }
+    // Browser doesn't support Geolocation
+    else {
+      browserSupportFlag = false;
+      handleNoGeolocation(browserSupportFlag);
     }
 
   })
