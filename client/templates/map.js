@@ -7,7 +7,7 @@ Template.map.helpers({
     if (GoogleMaps.loaded()) {
       return {
         center: new google.maps.LatLng(42.7000, 23.3333),
-        zoom: 8
+        zoom: 12
       };
     }
   }
