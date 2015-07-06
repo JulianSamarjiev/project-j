@@ -14,3 +14,5 @@ accounts-password
 iron:router
 dburles:google-maps
 mdg:geolocation
+react
+react-template-helper
