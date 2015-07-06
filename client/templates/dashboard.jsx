@@ -1,11 +1,16 @@
 var Dashboard = React.createClass({
+  getInitialState: function() {
+    return {value: 'Add location'};
+  },
+  handleChange: function(event) {
+    this.setState({value: event.target.value});
+  },
   render: function() {
-    return <div>Hello from React</div>;
+    var value = this.state.value;
+    return <input type="text" value={value} onChange={this.handleChange} />;
   }
 });
 
-Template.dashboard.helpers({
-  Dashboard() {
-    return Dashboard;
-  }
-})
+React.render(
+  <Dashboard />, document.getElementById('app')
+);
